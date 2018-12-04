@@ -84,6 +84,27 @@ $ git rebase origin/master
 ![gitsetting05](https://user-images.githubusercontent.com/43169339/49422126-ea8cf080-f7d5-11e8-95ed-63fcfc5987f7.PNG)
 
 
+- rebase 사용했는데 충돌시. (같은 파일을 수정하여서 변경 내역을 자동으로 합치질 못함. 이러한 경우 수동으로 해결)
+![gitsetting08](https://user-images.githubusercontent.com/43169339/49429826-dc969a00-f7ec-11e8-9ea2-738664b1a834.PNG)
+
+- status를 사용하여 어떤 파일 충돌이 발생했는지 확인.
+```sh
+$ git status
+```
+![gitsetting09](https://user-images.githubusercontent.com/43169339/49430122-8f66f800-f7ed-11e8-9be9-19354c5ff5d8.PNG)
+
+- 충돌이 발생한 파일을 열어 수정.
+(VS CODE의 경우, 두 변경 사항 수락 클릭시 자동으로 수정됨)
+![gitsetting10](https://user-images.githubusercontent.com/43169339/49430233-d1903980-f7ed-11e8-9b11-e12a143c7e67.PNG)
+
+- 변경된 파일 GIT에 추가, rebase 다시 진행.
+```sh
+$ git add .
+$ git rebase --continue
+```
+
+
+
 
 ### 참고사이트
 - Git을 이용한 협업 워크플로우 (https://lhy.kr/git-workflow)
