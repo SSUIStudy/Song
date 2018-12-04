@@ -23,7 +23,6 @@ $ mkdir 폴더명 (폴더 생성)
 $ cd 생성한 폴더명
 ```
 ![gitremote03](https://user-images.githubusercontent.com/43169339/48525513-c8cfd600-e8c7-11e8-97da-0ab8233373c9.PNG)
-
 (터미널에서 폴더 생성)
 
 ![gitsetting01](https://user-images.githubusercontent.com/43169339/49420388-874b9000-f7ce-11e8-97ff-074bc23498b6.PNG)
