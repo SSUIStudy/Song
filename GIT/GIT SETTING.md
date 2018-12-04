@@ -61,7 +61,7 @@ $ git commit -m "Test"
 
 - 푸쉬.(push)
 ```sh
-$ git  push
+$ git push
 ```
 ![gitremote06](https://user-images.githubusercontent.com/43169339/48526364-c02ccf00-e8ca-11e8-92c4-7e0a51316629.PNG)
 
