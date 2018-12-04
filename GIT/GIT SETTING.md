@@ -23,7 +23,9 @@ $ mkdir 폴더명 (폴더 생성)
 $ cd 생성한 폴더명
 ```
 ![gitremote03](https://user-images.githubusercontent.com/43169339/48525513-c8cfd600-e8c7-11e8-97da-0ab8233373c9.PNG)
+
 (터미널에서 폴더 생성)
+
 ![gitsetting01](https://user-images.githubusercontent.com/43169339/49420388-874b9000-f7ce-11e8-97ff-074bc23498b6.PNG)
 (VS CODE 폴더 생성)
 
@@ -88,4 +90,4 @@ $ git rebase origin/master
 - Git을 이용한 협업 워크플로우 (https://lhy.kr/git-workflow)
 - Fork를 이용한 깃 협업플로우 (http://playinlion.tistory.com/29)
 - GitHub로 협업하는 방법 - Gitflow Workflow (https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html)
-- 우린 Git-flow를 사용하고 있어요 - 우아한 형제들 (http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+- 우린 Git-flow를 사용하고 있어요 - 우아한 형제들 (http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html) 
