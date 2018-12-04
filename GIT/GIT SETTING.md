@@ -102,6 +102,7 @@ $ git status
 $ git add .
 $ git rebase --continue
 ```
+![gitsetting11](https://user-images.githubusercontent.com/43169339/49430468-73178b00-f7ee-11e8-84f8-360dda3f1c0a.PNG)
 
 
 
