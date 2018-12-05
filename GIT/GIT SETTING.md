@@ -31,7 +31,7 @@ $ cd 생성한 폴더명
 
 - 권한 부여받은 저장소, 생성한 폴더에 복사
 ```sh
-$ git clone 저장소 주소 . (끝에 . 입력해야하 생성한 폴더에 파일만 복사함)
+$ git clone 저장소 주소 . (끝에 . 입력해야 생성한 폴더에 파일만 복사함)
 ```
 ![gitremote04](https://user-images.githubusercontent.com/43169339/48525731-86f35f80-e8c8-11e8-8b45-09d749d7d3f3.PNG)
 
