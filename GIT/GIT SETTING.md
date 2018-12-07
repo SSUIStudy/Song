@@ -178,6 +178,10 @@ Feature Branch Workflow
 $ git branch 브랜치이름
 
 $ git checkout 브랜치이름
+
+$ git branch -d 브랜치이름 (로컬 브랜치 삭제)
+
+$ git push origin :브랜치이름 (저장소 브랜치 삭제)
 ```
 ![gitflow01](https://user-images.githubusercontent.com/43169339/48683627-735e3680-ebf1-11e8-9261-1f823c6bd15d.PNG)
 ***
