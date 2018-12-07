@@ -212,8 +212,37 @@ $ git push 저장소이름 master
 ![gitflow03](https://user-images.githubusercontent.com/43169339/48687097-cee4f000-ec02-11e8-92c7-31afa463274e.PNG)
 ***
 
+
+***
+***
+| 명령어   | 설명                                              |
+| -------- | ------------------------------------------------- |
+| clone    | 저장소를 로컬 폴더에 복사                         |
+| remote   | 원격 저장소 추가                                  |
+| init     | 저장소 초기화                                     |
+| add      | 인덱스에 파일 상태 기록                           |
+| log      | 커밋 이력 조회                                    |
+| status   | 작업 트리 상태 표시                               |
+| branch   | 분기, 나열, 작성                                  |
+| checkout | 분기를 전환하거나 작업 트리 파일 복원             |
+| commit   | 저장소 변경 사항을 기록                           |
+| diff     | 스테이징 영역과 현재 작업트리의 차이점            |
+| merge    | 병합                                              |
+| rebase   | ????                                              |
+| fetch    | 원격 저장소의 커밋 이력을 가져와 로컬 브랜치 갱신 |
+| pull     | 이력 및 병합                                      |
+| push     | 원격 저장소에 푸쉬                                |
+|          |                                                   |
+|          |                                                   |
+|          |                                                   |
+|          |                                                   |
+|          |                                                   |
+
+
+
 ### 참고사이트
 - Git을 이용한 협업 워크플로우 (https://lhy.kr/git-workflow)
 - Fork를 이용한 깃 협업플로우 (http://playinlion.tistory.com/29)
 - GitHub로 협업하는 방법 - Gitflow Workflow (https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html)
 - 우린 Git-flow를 사용하고 있어요 - 우아한 형제들 (http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html) 
+- Git 명령어 정리 (https://blog.outsider.ne.kr/572)
