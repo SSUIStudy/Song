@@ -232,11 +232,26 @@ $ git push 저장소이름 master
 | fetch    | 원격 저장소의 커밋 이력을 가져와 로컬 브랜치 갱신 |
 | pull     | 이력 및 병합                                      |
 | push     | 원격 저장소에 푸쉬                                |
-|          |                                                   |
-|          |                                                   |
-|          |                                                   |
-|          |                                                   |
-|          |                                                   |
+
+
+#### merge, rebase 차이
+
+-  merge
+
+
+
+- rebase
+
+
+
+#### pull, fetch + rebase 차이?
+
+-  pull
+
+
+
+- fetch + rebase
+
 
 
 
