@@ -228,7 +228,7 @@ $ git push 저장소이름 master
 | commit   | 저장소 변경 사항을 기록                           |
 | diff     | 스테이징 영역과 현재 작업트리의 차이점            |
 | merge    | 병합                                              |
-| rebase   | ????                                              |
+| rebase   | 병합                                              |
 | fetch    | 원격 저장소의 커밋 이력을 가져와 로컬 브랜치 갱신 |
 | pull     | 이력 및 병합                                      |
 | push     | 원격 저장소에 푸쉬                                |
@@ -237,11 +237,11 @@ $ git push 저장소이름 master
 #### merge, rebase 차이
 
 -  merge
-
+변경 내용의 이력이 모두 그대로 남아 있기 때문에 이력이 복잡.
 
 
 - rebase
-
+이력은 단순해지지만, 원래의 커밋 이력이 변경. 정확한 이력을 남겨야 할 필요가 있을 경우 사용하면 안됨.
 
 
 #### pull, fetch + rebase 차이?
@@ -261,3 +261,4 @@ $ git push 저장소이름 master
 - GitHub로 협업하는 방법 - Gitflow Workflow (https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html)
 - 우린 Git-flow를 사용하고 있어요 - 우아한 형제들 (http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html) 
 - Git 명령어 정리 (https://blog.outsider.ne.kr/572)
+- 브랜치 통합하기 (https://backlog.com/git-tutorial/kr/stepup/stepup1_4.html)
