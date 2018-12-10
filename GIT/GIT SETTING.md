@@ -246,16 +246,6 @@ $ git push 저장소이름 master
 이력은 단순해지지만, 원래의 커밋 이력이 변경. 정확한 이력을 남겨야 할 필요가 있을 경우 사용하면 안됨.
 
 
-#### pull, fetch + rebase 차이?
-
--  pull
-
-
-
-- fetch + rebase
-
-
-
 
 ### 참고사이트
 - Git을 이용한 협업 워크플로우 (https://lhy.kr/git-workflow)
