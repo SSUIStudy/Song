@@ -69,10 +69,7 @@ div.ratio { padding-top: 56.25%; }
 div.ratio:before { content: ""; display: block; position: relative; width: 100%; padding-top: 56.25%; }
 ```
 
-4. 삼각형
-
-
-5. 폰트 스타일
+4. 폰트 스타일
 
 ```sh
 @mixin font-source-sans($size: false, $colour: false, $weight: false,  $lh: false) {
@@ -92,9 +89,113 @@ p.fontstylesans {
 p.fontstylesans { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 10px; color: #333333; line-height: 20px;}
 ```
 
+5. 미디어쿼리
 
+```sh
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media screen and (min-width: 1900px) {
+			@content;
+		}
+  }
+  @else if $point == medium {
+    @media screen and (min-width: 1200px) {
+			@content;
+		}
+  }
+  @else if $point == small {
+    @media screen and (min-width: 767px) {
+			@content; 
+		}
+  }
+}
 
+예)
+div.mq {
+	color: rgb(111,111,111);
 
+	@include breakpoint(medium) {
+		color: rgb(222,222,222);
+	}
+}
+
+결과)
+div.mq { color: #6f6f6f; }
+@media screen and (min-width: 1200px) { 
+	div.mq { color: #dedede; }
+}
+
+```
+
+6. 벤더프릭스
+
+```sh
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+예)
+div.prefix {
+  @include prefix(transform, rotate(90deg), ('webkit', 'ms'));
+}
+
+결과)
+div.prefix { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+```
+
+7. Z-INDEX
+- z-index 동일하게 적용시 사용 
+
+```sh
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+$z-indexes: (
+    "header",
+    "contents",
+    "footer",
+    "popup"
+);
+
+예)
+.site-header {
+    z-index: z('header');
+}
+.site-header2 {
+    z-index: z('contents');
+}
+.site-header3 {
+    z-index: z('footer');
+}
+.site-header4 {
+    z-index: z('popup');
+}
+
+결과)
+.site-header { z-index: 4; }
+.site-header2 { z-index: 3; }
+.site-header3 { z-index: 2; }
+.site-header4 { z-index: 1; }
+```
+
+8.
+
+```sh
+
+예)
+
+결과)
+
+```
 
 
 
