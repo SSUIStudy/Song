@@ -127,7 +127,7 @@ div.mq { color: #6f6f6f; }
 
 ```
 
-6. 벤더프릭스
+6. 벤더프리픽스
 
 ```sh
 @mixin prefix($property, $value, $prefixes: ()) {
