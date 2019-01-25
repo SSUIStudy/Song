@@ -13,7 +13,7 @@ https://github.com/Alecaddd/gulp-es6/blob/master/gulpfile.js
 "gulp-notify": "^3.2.0", //
 "gulp-options": "^1.1.1", //
 "gulp-plumber": "^1.2.1", // pipe 메소드 대체, 오류시 중단 방지
-"gulp-rename": "^1.4.0", //
+"gulp-rename": "^1.4.0", // 파일 이름 변경
 "gulp-sass": "^4.0.2", //
 "gulp-sourcemaps": "^2.6.4", //
 "gulp-strip-debug": "^3.0.0", //
