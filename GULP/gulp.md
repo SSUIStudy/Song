@@ -38,6 +38,8 @@ https://github.com/Alecaddd/gulp-es6/blob/master/gulpfile.js
 
 "gulp-uglifycss": "^1.1.0", //
 
+"sassdoc": "^2.5.1", //
+
 "vinyl-buffer": "^1.0.1", //
 
 "vinyl-source-stream": "^2.0.0" //
