@@ -302,13 +302,57 @@ div.crobbox2 > img {
 
 ```
 
-5. 
+5. 보더 스타일
 
 ```sh
 
 예)
+@mixin brdStyle($linePos, $wt, $color) {
+	$brd: $wt solid #{$color};
+	
+	@if $linePos == 'top' {
+		border-#{$linePos}: $brd;
+	}
+	@else if $linePos == 'bottom' {
+		border-#{$linePos}: $brd;
+	}
+	@else if $linePos == 'left' {
+		border-#{$linePos}: $brd;
+	}
+	@else if $linePos == 'right' {
+		border-#{$linePos}: $brd;
+	}
+	@else if $linePos == 'all' {
+		border: $brd;
+	}
+}
+
+div.brdbox {@include brdStyle(top, 1px, rgb(115,115,155));}
+div.brdbox2 {@include brdStyle(bottom, 1px, rgb(115,115,155));}
+div.brdbox3 {@include brdStyle(left, 1px, rgb(115,115,155));}
+div.brdbox4 {@include brdStyle(right, 1px, rgb(115,115,155));}
+div.brdbox5 {@include brdStyle(all, 1px, rgb(115,115,155));}
 
 결과)
+div.brdbox {
+  border-top: 1px solid #73739b;
+}
+
+div.brdbox2 {
+  border-bottom: 1px solid #73739b;
+}
+
+div.brdbox3 {
+  border-left: 1px solid #73739b;
+}
+
+div.brdbox4 {
+  border-right: 1px solid #73739b;
+}
+
+div.brdbox5 {
+  border: 1px solid #73739b;
+}
 
 ```
 
