@@ -365,4 +365,5 @@ div.brdbox5 {
 *참고사이트*
 
 https://mytory.net/2016/12/23/when-to-use-extend-when-to-use-a-mixin.html
+
 https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
