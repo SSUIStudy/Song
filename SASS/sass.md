@@ -95,6 +95,162 @@ EXTEND :  사용시 올바른 특성 및 연관성을 형성을 중심으로
 
 ![extend02](https://user-images.githubusercontent.com/43169339/51810576-08656600-22ec-11e9-8636-9b17686d919a.PNG)
 
+MIXIN 
+
+
+
+1. 리스트
+
+```sh
+
+예)
+@mixin listThumb($thumb-num, $thumb-wt, $thumb-mgr, $thumb-mgb) {
+	& > li {
+		width: $thumb-wt;
+		margin: 0 $thumb-mgr $thumb-mgb 0; 
+	}
+
+	& > li:nth-child(#{$thumb-num}n) {
+		margin-right: 0;
+	}
+};
+
+
+.thumb__list {
+	@include listThumb(3, 20%, 10px, 10px);
+}
+
+결과)
+.thumb__list > li {
+  width: 20%;
+  margin: 0 10px 10px 0;
+}
+.thumb__list > li:nth-child(3n) {
+  margin-right: 0;
+}
+
+```
+
+
+
+2. 이미지
+
+```sh
+
+예)
+@mixin icoShare($ico-name) {
+	.#{$ico-name}__share {
+		background-image: url(/images/common/ico_#{$ico-name}.png);
+	}
+};
+
+@include icoShare(naver);
+@include icoShare(facebook);
+
+결과)
+.naver__share {
+  background-image: url(/images/common/ico_naver.png);
+}
+.facebook__share {
+  background-image: url(/images/common/ico_facebook.png);
+}
+
+```
+
+
+
+3. 포지션 센터
+
+```sh
+
+예)
+@mixin center($pos) {
+	position: absolute;
+
+	@if $pos == 'vt' {
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	@else if $pos == 'ht' {
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	@else if $pos == 'both' {
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+div.box1 {
+	@include center(vt);
+}
+div.box2 {
+	@include center(ht);
+}
+div.box3 {
+	@include center(both);
+}
+
+결과)
+div.box1 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+div.box2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+div.box3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+```
+
+4.
+
+```sh
+
+예)
+
+결과)
+
+```
+
+5.
+
+```sh
+
+예)
+
+결과)
+
+```
+
+
+
+
+
+
 
 *참고사이트*
 
