@@ -104,9 +104,9 @@ MIXIN
 ```sh
 
 예)
-@mixin listThumb($thumb-num, $thumb-wt, $thumb-mgr, $thumb-mgb) {
+@mixin listThumb($thumb-num, $thumb-mgr, $thumb-mgb) {
 	& > li {
-		width: $thumb-wt;
+		width: 100% / $thumb-num;
 		margin: 0 $thumb-mgr $thumb-mgb 0; 
 	}
 
@@ -117,12 +117,12 @@ MIXIN
 
 
 .thumb__list {
-	@include listThumb(3, 20%, 10px, 10px);
+	@include listThumb(4, 10px, 10px);
 }
 
 결과)
 .thumb__list > li {
-  width: 20%;
+  width: 25%;
   margin: 0 10px 10px 0;
 }
 .thumb__list > li:nth-child(3n) {
@@ -302,7 +302,7 @@ div.crobbox2 > img {
 
 ```
 
-5.
+5. 
 
 ```sh
 
