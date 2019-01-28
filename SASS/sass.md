@@ -231,8 +231,74 @@ div.box3 {
 ```sh
 
 예)
+@mixin cropImg($crop, $wt, $ht) {
+	width: $wt;
+	height: $ht;
+	position: relative;
+	overflow: hidden;
+
+	& > img {
+		@if $crop == 'ht' {
+			width: auto;
+			height: 100%;
+		}
+		
+		@else if $crop == 'vt' {
+			width: 100%;
+			height: auto;
+		}
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+div.crobbox {
+	@include cropImg(ht, 100px, 100px);
+}
+
+div.crobbox2 {
+	@include cropImg(vt, 200px, 300px);
+}
 
 결과)
+div.crobbox {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+div.crobbox > img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div.crobbox2 {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+div.crobbox2 > img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 ```
 
@@ -255,3 +321,4 @@ div.box3 {
 *참고사이트*
 
 https://mytory.net/2016/12/23/when-to-use-extend-when-to-use-a-mixin.html
+https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
