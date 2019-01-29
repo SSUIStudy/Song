@@ -16,6 +16,7 @@
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "browserify-shim": "^3.8.14",
+    "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",

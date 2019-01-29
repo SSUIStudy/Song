@@ -1,0 +1,29 @@
+[
+  {
+    "description": "",
+    "commentRange": {
+      "start": 1,
+      "end": 1
+    },
+    "context": {
+      "type": "mixin",
+      "name": "aaa",
+      "code": "\n  body {color: red;}\n",
+      "line": {
+        "start": 2,
+        "end": 4
+      }
+    },
+    "author": [
+      "SONG"
+    ],
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "test01.scss",
+      "name": "test01.scss"
+    }
+  }
+]

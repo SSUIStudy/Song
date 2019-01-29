@@ -1,0 +1,42 @@
+/// 이미지 크롭
+/// @group IMAGES
+/// @author SONG KJ
+/// @param {string} $crop - ht, vt (가로,세로 선택)
+/// @param {number} $wt - width size
+/// @param {number} $ht - height size
+/// @example 
+/// div.cropbox {
+///   @include cropImg(ht, 100px, 100px);
+/// }
+/// div.cropbox2 {
+///   @include cropImg(vt, 200px, 300px);
+/// }
+///
+@mixin cropImg($crop, $wt, $ht) {
+	width: $wt;
+	height: $ht;
+	position: relative;
+	overflow: hidden;
+
+	& > img {
+		@if $crop == 'ht' {
+			width: auto;
+			height: 100%;
+		}
+		
+		@else if $crop == 'vt' {
+			width: 100%;
+			height: auto;
+		}
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+div.cropbox {	@include cropImg(ht, 100px, 100px); }
+div.cropbox2 { @include cropImg(vt, 200px, 300px); }
