@@ -2,10 +2,7 @@
 @import "base/normalize", "base/opt-default";
 
 /*components*/
-@import "components/button";
-
-/*utils*/
-@import "utils/animation", "utils/function", "utils/mixins";
+@import "components/button", "components/animation", "components/function", "components/mixins";
 
 /*vendors*/
 @import "vendors/slick";
