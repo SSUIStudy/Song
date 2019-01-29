@@ -28,7 +28,7 @@ var sassdoc      = require('sassdoc');
 var browserSync  = require( 'browser-sync' ).create();
 
 // Project related variables
-var styleSRCmin  = './src/stylesheets/main.scss';
+var styleSRCmin  = './src/stylesheets/style.scss';
 var styleSRC     = './src/stylesheets/*/**/*.scss';
 var styleURL     = './dist/css/';
 var mapURL       = './';
