@@ -58,7 +58,7 @@ var mapURL       = './';
 
 var jsSRC        = './src/js/';
 var jsFront      = 'main.js';
-var jsFiles      = [ jsFront ];
+var jsFiles      = [jsFront];
 var jsURL        = './dist/js/';
 
 var imgSRC       = './src/images/**/*';
@@ -99,7 +99,8 @@ var config = {
 }
 
 function css(done) {
-	src( [ styleSRC ] )
+	src( [ styleSRC ] )		
+		.pipe( sassdoc(config.sassdoc) )
 		.pipe( sourcemaps.init() )
 		.pipe( sass({
 			errLogToConsole: true,
@@ -108,7 +109,6 @@ function css(done) {
 		.on( 'error', console.error.bind( console ) )
 		.pipe( autoprefixer({ browsers: [ 'last 2 versions', '> 5%', 'Firefox ESR' ] }) )
         //.pipe( rename( { suffix: '.min' } ) )
-        .pipe(sassdoc(config.sassdoc))
         .pipe( sourcemaps.write( mapURL ) )
 		.pipe( dest( styleURL ) )
 		.pipe( browserSync.stream() );
@@ -123,9 +123,9 @@ function js(done) {
 		.transform( babelify, { presets: [ '@babel/preset-env' ] } )
 		.bundle()
 		.pipe( source( entry ) )
-		.pipe( rename( {
+		/*.pipe( rename( {
 			extname: '.min.js'
-        } ) )
+        } ) )*/
 		.pipe( buffer() )
 		.pipe( gulpif( options.has( 'production' ), stripDebug() ) )
 		.pipe( sourcemaps.init({ loadMaps: true }) )
