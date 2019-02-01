@@ -38,11 +38,11 @@ stylesheets/
 
     pages/
         /pc
-            _home.scss
+            _product.scss
             _view.scss
             _list.scss
 
-            pages.scss (import) [_home, _view, _list]
+            pages.scss (import) [_product, _view, _list]
 
         /mobile
 
