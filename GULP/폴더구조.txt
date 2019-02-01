@@ -67,4 +67,6 @@ images
     btn/
 
 
-    
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/layout/pc/layout.css">
+<link rel="stylesheet" href="/css/pages/pc/pages.css">
