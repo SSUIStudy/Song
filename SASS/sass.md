@@ -116,14 +116,14 @@ MIXIN
 };
 
 .thumb__list {
-	@include listThumb(2, 1000px, 480px, 20px, 20px);
+	@include listThumb(2, 1000px, 480px, 40px, 40px);
 }
 
 
 결과)
 .thumb__list > li {
   width: 48%;
-  margin: 0 2% 2% 0;
+  margin: 0 4% 4% 0;
 }
 .thumb__list > li:nth-child(2n) {
   margin-right: 0;
