@@ -1,0 +1,8 @@
+/*base*/
+@import "base/normalize", "base/opt-default";
+
+/*components*/
+@import "components/button", "components/animation", "components/function", "components/mixins";
+
+/*vendors*/
+@import "vendors/slick";
