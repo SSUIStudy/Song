@@ -104,6 +104,7 @@ MIXIN
 ```sh
 
 예)
+1
 @mixin listThumb($thumb-num, $thumb-mgr, $thumb-mgb) {
 	& > li {
 		width: 100% / $thumb-num;
@@ -115,17 +116,43 @@ MIXIN
 	}
 };
 
-
 .thumb__list {
 	@include listThumb(4, 10px, 10px);
 }
 
+2
+@mixin listThumb($thumb-num, $docWt, $imgWt, $thumb-mgr, $thumb-mgb) {
+	& > li {
+		width: $imgWt / $docWt * 100%;
+		margin: 0 $thumb-mgr / $docWt * 100% $thumb-mgb / $docWt * 100% 0; 
+	}
+
+	& > li:nth-child(#{$thumb-num}n) {
+		margin-right: 0;
+	}
+};
+
+.thumb__list {
+	@include listThumb(2, 1000px, 480px, 20px, 20px);
+}
+
+
 결과)
+1
 .thumb__list > li {
   width: 25%;
   margin: 0 10px 10px 0;
 }
 .thumb__list > li:nth-child(3n) {
+  margin-right: 0;
+}
+
+2
+.thumb__list > li {
+  width: 48%;
+  margin: 0 2% 2% 0;
+}
+.thumb__list > li:nth-child(2n) {
   margin-right: 0;
 }
 
