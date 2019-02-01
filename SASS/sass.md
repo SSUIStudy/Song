@@ -104,10 +104,14 @@ MIXIN
 ```sh
 
 예)
-@mixin listThumb($thumb-num, $docWt, $imgWt, $thumb-mgr, $thumb-mgb) {
+@mixin listThumb($thumb-num, $wWt, $imgWt, $thumb-mgr, $thumb-mgb) {
+	font-size: 0;
+
 	& > li {
-		width: $imgWt / $docWt * 100%;
-		margin: 0 $thumb-mgr / $docWt * 100% $thumb-mgb / $docWt * 100% 0; 
+		width: $imgWt / $wWt * 100%;
+		margin: 0 $thumb-mgr / $wWt * 100% $thumb-mgb / $wWt * 100% 0; 
+		display: inline-block;
+		vertical-align: top;
 	}
 
 	& > li:nth-child(#{$thumb-num}n) {
