@@ -120,7 +120,17 @@ MIXIN
 };
 
 .thumb__list {
-	@include listThumb(2, 1000px, 480px, 40px, 40px);
+ @include breakpoint(desktop) {
+ 	@include listThumb(4, 1000px, 235px, 20px, 20px);
+ }
+
+ @include breakpoint(tablet) {
+ 	@include listThumb(3, 1000px, 320px, 20px, 20px);
+ }
+
+ @include breakpoint(mobile) {
+ 	@include listThumb(2, 1000px, 480px, 20px, 20px);
+ }
 }
 
 
@@ -359,6 +369,86 @@ div.brdbox5 {
 }
 
 ```
+
+
+6. 햄버거 버튼
+
+```sh
+
+예)
+@mixin hamburger($wBtn, $hBtn, $hBar, $color) {
+	width: $wBtn;
+    height: $hBtn;
+    position: relative;
+    top: 0;
+    left: 50%;
+    font-size: 0;
+    text-indent: -9999px;
+
+    & span {
+        width: $wBtn;
+        height: $hBar;
+        display: block;
+        position: absolute;
+        left: 50%;
+        background-color: $color;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+
+    & .top {
+        top: 0;
+    }
+    & .mid {
+        top: calc(50% - #{$hBar/2});
+    }
+    & .bot {
+        top: calc(100% - #{$hBar});
+    }
+}
+.menu__btn {
+    @include hamburger(40px, 40px, 5px, rgb(255,0,255));
+}
+
+결과)
+.menu__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 50%;
+  font-size: 0;
+  text-indent: -9999px;
+}
+.menu__btn span {
+  width: 40px;
+  height: 5px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  background-color: magenta;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.menu__btn .top {
+  top: 0;
+}
+.menu__btn .mid {
+  top: calc(50% - 2.5px);
+}
+.menu__btn .bot {
+  top: calc(100% - 5px);
+}
+
+```
+결과
+![image](https://user-images.githubusercontent.com/43169339/52764619-3a085c00-3064-11e9-890d-f7bbb71bba79.png)
+
+
+sassdoc
+
+![image](https://user-images.githubusercontent.com/43169339/52764589-20ffab00-3064-11e9-9b43-b11835fbcadd.png)
 
 
 
