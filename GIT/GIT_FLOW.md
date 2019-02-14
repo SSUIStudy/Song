@@ -27,7 +27,7 @@ $ git checkout -b issue#190214
 $ git add 작업한 파일
 $ git commit -m "msg"
 
--u 옵션 : 기능 브랜치오 동일한 이름으로 원격저장소에 브랜치 추가
+-u 옵션 : 기능 브랜치와 동일한 이름으로 원격저장소에 브랜치 추가
 $ git push -u origin issue#190214
 
 -u 옵션 연결 후 -u 없이 푸시 가능
