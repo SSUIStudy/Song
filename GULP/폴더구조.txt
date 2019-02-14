@@ -33,7 +33,7 @@ stylesheets/
             _footer.scss
             _sitemap.scss
 
-            layout.scss (import) [_header, _gnb, _footer, _sitemap]
+            layout.scss (import) [/components/*.scss, _header, _gnb, _footer, _sitemap]
         /mobile
 
     pages/
@@ -42,7 +42,7 @@ stylesheets/
             _view.scss
             _list.scss
 
-            pages.scss (import) [_product, _view, _list]
+            pages.scss (import) [/components/*.scss, _product, _view, _list]
 
         /mobile
 
