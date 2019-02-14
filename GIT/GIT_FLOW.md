@@ -33,15 +33,15 @@ $ git push -u origin issue#190214
 $ git push origin issue#190214
 ```
 
-![1550109387392](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550109387392.png)
+![image](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550109387392.png)
 
 4. 관리자에게 작업한 코드를 반영해달라고 요청(풀 리퀘스트)
 
-   ![1550110124988](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110124988.png)
+![image](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110124988.png)
 
-![1550110239686](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110239686.png)
+![image](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110239686.png)
 
-![1550110488590](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110488590.png)
+![image](C:\Users\SONGKYUJAE\AppData\Roaming\Typora\typora-user-images\1550110488590.png)
 
 5. 풀 리퀘스트를 수용하기로 결정이 난 후 병합 작업 진행
    - 작업 진행시 `master` 브랜치의 내용이 최신이여야 함, 원격 저장소에 새로운 내용이 있다면 `master` 브랜치 최신화 시켜야 함
@@ -59,7 +59,7 @@ $ git push origin master
 $ git push origin :issue#190214
 ```
 
-   ![image](https://user-images.githubusercontent.com/43169339/52758382-5ea40a00-304b-11e9-98c0-621ce1521a02.png)
+![image](https://user-images.githubusercontent.com/43169339/52758382-5ea40a00-304b-11e9-98c0-621ce1521a02.png)
 
 7. 프로젝트에 참여 하고 있는 개발자는 자신의 로컬 저장소 최신화 하여하 함.
 ```sh
