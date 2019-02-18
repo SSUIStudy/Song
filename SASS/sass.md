@@ -567,9 +567,6 @@ div.brdbox5 {
 ![image](https://user-images.githubusercontent.com/43169339/52928763-bc569000-3384-11e9-8b66-0687bd1441ea.png)
 
 
-sassdoc
-
-![image](https://user-images.githubusercontent.com/43169339/52764589-20ffab00-3064-11e9-9b43-b11835fbcadd.png)
 
 
 
