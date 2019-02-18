@@ -376,14 +376,23 @@ div.brdbox5 {
 ```sh
 
 예)
-@mixin hamburger($wBtn, $hBtn, $hBar, $color) {
+
+-html
+<button type="button" class="menu__btn">
+    <span class="top">TOP</span>
+    <span class="mid">MID</span>
+    <span class="bot">BOT</span>
+</button>
+
+
+@mixin hamburger($wBtn, $hBtn, $hBar, $color, $onStyle) {
 	width: $wBtn;
     height: $hBtn;
     position: relative;
     top: 0;
     left: 50%;
     font-size: 0;
-    text-indent: -9999px;
+    text-indent: -9999px;    
 
     & span {
         width: $wBtn;
@@ -395,60 +404,174 @@ div.brdbox5 {
         -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
         transform: translate(-50%, 0);
+        -webkit-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        transition: all 0.3s;
+
+        &.top {
+            top: 0;
+        }
+        &.mid {
+            top: calc(50% - #{$hBar/2});
+        }
+        &.bot {
+            top: calc(100% - #{$hBar});
+        }
     }
 
-    & .top {
-        top: 0;
-    }
-    & .mid {
-        top: calc(50% - #{$hBar/2});
-    }
-    & .bot {
-        top: calc(100% - #{$hBar});
-    }
+    &.on {
+        @if $onStyle == "minus" {
+            & .top {
+                opacity: 0;
+                top: calc(50% - #{$hBar/2});
+            }
+            & .mid {
+                top: calc(50% - #{$hBar/2});
+            }
+            & .bot {
+                opacity: 0;
+                top: calc(50% - #{$hBar/2});
+            }
+        }        
+        @else if $onStyle == "cross" {
+            & .top {
+                top: calc(50% - #{$hBar/2});
+                -webkit-transform: translate(-50%, 0) rotate(-135deg);
+                -ms-transform: translate(-50%, 0) rotate(-135deg);
+                transform: translate(-50%, 0) rotate(-135deg);
+            }
+            & .mid {
+                opacity: 0;
+                top: calc(50% - #{$hBar/2});
+            }
+            & .bot {
+                top: calc(50% - #{$hBar/2});
+                -webkit-transform: translate(-50%, 0) rotate(135deg);
+                -ms-transform: translate(-50%, 0) rotate(135deg);
+                transform: translate(-50%, 0) rotate(135deg);
+            }
+        }       
+    }   
 }
 .menu__btn {
-    @include hamburger(40px, 40px, 5px, rgb(255,0,255));
+    @include hamburger(30px, 30px, 4px, rgb(255,0,255), "cross");
 }
+.menu__btn2 {
+    @include hamburger(30px, 30px, 4px, rgb(255,0,255), "minus");
+}
+
 
 결과)
 .menu__btn {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   position: relative;
   top: 0;
   left: 50%;
   font-size: 0;
   text-indent: -9999px;
 }
+
 .menu__btn span {
-  width: 40px;
-  height: 5px;
+  width: 30px;
+  height: 4px;
   display: block;
   position: absolute;
   left: 50%;
   background-color: magenta;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.menu__btn .top {
+
+.menu__btn span.top {
   top: 0;
 }
-.menu__btn .mid {
-  top: calc(50% - 2.5px);
+
+.menu__btn span.mid {
+  top: calc(50% - 2px);
 }
-.menu__btn .bot {
-  top: calc(100% - 5px);
+
+.menu__btn span.bot {
+  top: calc(100% - 4px);
+}
+
+.menu__btn.on .top {
+  top: calc(50% - 2px);
+  -webkit-transform: translate(-50%, 0) rotate(-135deg);
+  transform: translate(-50%, 0) rotate(-135deg);
+}
+
+.menu__btn.on .mid {
+  opacity: 0;
+  top: calc(50% - 2px);
+}
+
+.menu__btn.on .bot {
+  top: calc(50% - 2px);
+  -webkit-transform: translate(-50%, 0) rotate(135deg);
+  transform: translate(-50%, 0) rotate(135deg);
+}
+
+.menu__btn2 {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 50%;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.menu__btn2 span {
+  width: 30px;
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  background-color: magenta;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu__btn2 span.top {
+  top: 0;
+}
+
+.menu__btn2 span.mid {
+  top: calc(50% - 2px);
+}
+
+.menu__btn2 span.bot {
+  top: calc(100% - 4px);
+}
+
+.menu__btn2.on .top {
+  opacity: 0;
+  top: calc(50% - 2px);
+}
+
+.menu__btn2.on .mid {
+  top: calc(50% - 2px);
+}
+
+.menu__btn2.on .bot {
+  opacity: 0;
+  top: calc(50% - 2px);
 }
 
 ```
-결과
-![image](https://user-images.githubusercontent.com/43169339/52764619-3a085c00-3064-11e9-890d-f7bbb71bba79.png)
+![image](https://user-images.githubusercontent.com/43169339/52928763-bc569000-3384-11e9-8b66-0687bd1441ea.png)
 
 
 sassdoc
 
 ![image](https://user-images.githubusercontent.com/43169339/52764589-20ffab00-3064-11e9-9b43-b11835fbcadd.png)
+
+
 
 
 
