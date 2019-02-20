@@ -74,16 +74,16 @@ $ git rebase origin/master
 
 8. 충돌 발생시
 
-   ```sh
-   # 원격 저장소 커밋을 가져와서 로컬 master 브랜치와 병합 후 스테이징에 파일 추가 및 커밋, 푸쉬 
-   $ git fetch origin master
-   $ git merge origin/master
-   $ git add .
-   $ git commit -m "msg"
-   $ git push origin master
-   ```
+```sh
+# 원격 저장소 커밋을 가져와서 로컬 master 브랜치와 병합 후 스테이징에 파일 추가 및 커밋, 푸쉬 
+$ git fetch origin master
+$ git merge origin/master
+$ git add .
+$ git commit -m "msg"
+$ git push origin master
+```
 
-   ![image](https://user-images.githubusercontent.com/43169339/52831010-4b11a580-3116-11e9-8276-6b63480f9190.png)
+![image](https://user-images.githubusercontent.com/43169339/52831010-4b11a580-3116-11e9-8276-6b63480f9190.png)
 
 
 
