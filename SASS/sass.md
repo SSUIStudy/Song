@@ -568,15 +568,124 @@ div.brdbox5 {
 
 
 
-7.가가가가
+7. swicth button
 
 ```sh
 
 예)
 
+-html 
+<div class="switch-box">
+    <input type="checkbox" id="switchBtn" />
+    <label for="switchBtn"></label>
+</div>
+
+@mixin switchBtn($wt, $ht, $bg, $bgOn, $circleColor) {
+	& > input[type="checkbox"] {
+        position: absolute;
+        z-index: -9999;
+        opacity: 0;
+    }
+
+    & > label {
+        width: $wt;
+        height: $ht;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: $bg;
+        border-radius: 50px;
+        box-sizing: border-box;
+        -webkit-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        transition: all 0.3s;
+
+        &:before {
+            width: $ht - 6px;
+            height: $ht - 6px;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 3px;
+            background-color: $circleColor;
+            border-radius: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+    }
+
+    & > input[type="checkbox"]:checked + label {
+        background-color: $bgOn;
+    }
+
+    & > input[type="checkbox"]:checked + label:before {
+        left: calc(100% - #{$ht - 6px + 3px});
+    }
+}
+
+
+.switch-box {
+    @include switchBtn(140px, 70px, orange, purple, aqua);
+}
+
+
+
 결과)
+.switch-box > input[type="checkbox"] {
+  position: absolute;
+  z-index: -9999;
+  opacity: 0;
+}
+
+.switch-box > label {
+  width: 140px;
+  height: 70px;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: orange;
+  border-radius: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.switch-box > label:before {
+  width: 64px;
+  height: 64px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  background-color: aqua;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.switch-box > input[type="checkbox"]:checked + label {
+  background-color: purple;
+}
+
+.switch-box > input[type="checkbox"]:checked + label:before {
+  left: calc(100% - 67px);
+}
+
 
 ```
+![image](https://user-images.githubusercontent.com/43169339/54105697-29ef5c80-4417-11e9-87b3-7262c6f583cc.png)
+
 
 
 
