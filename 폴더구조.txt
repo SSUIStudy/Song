@@ -1,0 +1,63 @@
+stylesheets/
+
+    base/
+        _normalize.scss
+        _opt-default.scss        
+    
+    
+    components/
+        _variables.scss
+        _button.scss          
+
+     
+    animation/
+        _ani01.scss
+        _ani02.scss
+        
+     
+    function/
+        _fc01.scss
+        _fc02.scss
+    
+
+    mixins/
+	_mixin01.scss
+	_mixin02.scss    
+                       
+
+    vendors/
+        _slick.scss
+        _jquery.scss
+
+
+    layout/
+        /pc
+            _header.scss
+            _gnb.scss
+            _footer.scss
+            _sitemap.scss
+
+	layout.scss (import) [_header, _gnb, _footer, _sitemap]
+
+        /mobile
+
+    pages/
+        /pc
+            _home.scss
+            _view.scss
+            _list.scss            
+
+	pages.scss (import) [_home, _view, _list]
+
+        /mobile
+
+
+style.scss (import) [base/, vendors/] - min
+
+
+https://velog.io/@yesdoing/BEM-Block-Element-Modifier-Quick-start
+
+
+
+
+    
