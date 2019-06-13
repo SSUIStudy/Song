@@ -45,19 +45,6 @@ function gnb() {
         depth1.parent('li').removeClass('depth2--open');
         bdy.removeClass('gnb--open');
     });
-
-    depth1.on('click', function(){
-    	ssq(this).parent('li').addClass('depth2--open');
-    });
-
-    btnBack.on('click', function(){
-        depth2.parent('li').removeClass('depth3--open');
-        depth1.parent('li').removeClass('depth2--open');
-    });
-
-    depth2.on('click', function(){
-    	ssq(this).parent('li').toggleClass('depth3--open');
-    });
 }
 
 ```
@@ -106,20 +93,6 @@ function gnb() {
             //모든 브라우저
             bdy.className = bdy.className.replace(regExp(clsName), ''); 			
         });
-
-            for(var i = 0; i < depth1.length; i++){					
-                depth1[i].addEventListener('click', function(){
-                var arr;
-
-                clsName2 = 'depth2--open';					
-
-                arr = this.parentNode.className.split(' ');
-
-                if (arr.indexOf(clsName2) == -1) {
-                    this.parentNode.className += ' ' + clsName2;
-                }			
-            });									
-        }			
 	}
 
 ```
