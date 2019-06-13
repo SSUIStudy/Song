@@ -20,7 +20,7 @@ RegExp : 정규 표현식을 구현한 자스 표준 내장 객체
 
 indexOf : String객체에서 주어진 값과 일치하는 첫번째 인덱스를 반환, 일치하는 값이 없을시 -1을 반환
 
-
+addEventListner : 이벤트 등록할 때 사용
 
 
 
@@ -170,6 +170,7 @@ removeClass()
 document.querySelector('body').classList.remove('클래스명'); //ie10까지
 
 &&
+
 
 //모든 브라우저 사용 가능
 var clsName = '클래스명',
