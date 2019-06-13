@@ -6,7 +6,7 @@
 
 #### **참고**
 
-querySelector  : 태그 객체 반환($, jQuery),  getElement~~와 다르게 거의 모든 선택자 사용 가능(아이디, 클래스 이름, 태그 이름, 하위태그 이름), 배열이 아닌, 맨 앞 객체 하나만 불러옴. (ie8~)
+querySelector  : 태그 객체 반환($, jQuery),  getElement~~와 다르게 거의 모든 선택자 사용 가능(아이디, 클래스 이름, 태그 이름, 하위태그 이름), 배열이 아닌, 맨 앞 객체 하나만 불러옴. (ie9~)
 
 querySelectorAll : querySelector 와 비슷하나 객체 반환시 여러개의 태그를 배열로 반환. (ie9~)
 
