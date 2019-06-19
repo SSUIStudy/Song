@@ -10,32 +10,31 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-	<title>MAIN | BRAND</title>
+	<title>POLYFILL</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
 	
 	
 	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/normalize.css">
 	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/opt-default.css">
-	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/slick.css">
-	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/layout.css">
-	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/product.css">
-	<link rel="stylesheet" href="http://brics.styleship.com/mo/resource/css/sub.css">
-
-    <script src="http://brics.styleship.com/mo/resource/js/lib/greensock/TweenMax.min.js"></script>
-    <script src="http://brics.styleship.com/mo/resource/js/lib/jquery-1.12.4.min.js"></script>
-    <script src="http://brics.styleship.com/mo/resource/js/lib/mighty.base.1.5.7.min.js"></script>
-    <script src="http://brics.styleship.com/mo/resource/js/lib/mighty.sort.1.3.0.min.js"></script>
-	<script src="http://brics.styleship.com/mo/resource/js/lib/slick.min.js"></script>
 
 	
 	<style>
 		div {width: 100px; height: 100px; margin: 30px; text-align: center; line-height: 100px; background-color: orange;}
+		article {overflow: hidden;}
+		article > div {float: left; margin: 15px 30px;}
 		._add {background-color: aquamarine;}
 		._remove {background-color: blanchedalmond;}
 		._toggle {background-color: blueviolet;}
 		._contain {background-color: royalblue;}
 		._replaceOld {background-color: salmon;}
 		._replaceNew {background-color: teal;}
+
+		._addM {background-color: aquamarine;}
+		._removeM {background-color: blanchedalmond;}
+		._toggleM {background-color: blueviolet;}
+		._containM {background-color: royalblue;}
+		._replaceOldM {background-color: salmon;}
+		._replaceNewM {background-color: teal;}
 	</style>
 
 	<!-- 개별 css, js -->
@@ -63,7 +62,7 @@
 							if (!this.contains(name)) {
 								this.element.className += this.element.className.length > 0 ? ' ' + name : name;
 							}
-						}, this);
+						}, this);						
 					},
 					remove: function() {
 						forEach(arguments, function(name) {
@@ -101,6 +100,8 @@
 				/////////////////////////////////////////////
 
 				//실행 코드
+				
+				//1개 일때
 
 				//add
 				var elAdd = document.querySelector('.add'),
@@ -139,16 +140,119 @@
 				replaceClsList.replace('_replaceOld', '_replaceNew');
 
 
+				//여러개 일때
+				
+				//add
+				var elAddM = document.querySelectorAll('.addm');
+
+				for(var a = 0; a < elAddM.length; a++){
+					var addClsListM = new ClassList(elAddM[a]);
+
+					addClsListM.add('_addM');							
+				}
+
+				//remove				
+				var elRemoveM = document.querySelectorAll('.removem');
+				
+				for(var r = 0; r < elRemoveM.length; r++){
+					var removeClsListM = new ClassList(elRemoveM[r]);
+
+					removeClsListM.remove('_removeM');
+				}
+				
+				//toggle
+				var elToggleM = document.querySelectorAll('.togglem'),					
+					clickToggle = function(idx){
+						var toggleClsListM = new ClassList(elToggleM[idx]);
+
+						elToggleM[idx].addEventListener('click', function(){						
+							toggleClsListM.toggle('_toggleM');							
+						});				
+					};	
+
+				for(var t = 0; t < elToggleM.length; t++){
+					clickToggle(t);								
+				}
+
+
+
+				//contain
+				var elContainM = document.querySelectorAll('.containm');
+
+				for(var c = 0; c < elContainM.length; c++){
+					var containClsListM = new ClassList(elContainM[c]);				
+
+					if(containClsListM.contains('_containM') == true){
+						console.log('true');
+					}else{
+						console.log('false');
+					}
+				}
+
+				//replace
+				var elReplaceM = document.querySelectorAll('.replacem');
+
+				for(var rp = 0; rp < elReplaceM.length; rp++){
+					replaceClsListM = new ClassList(elReplaceM[rp]);
+
+					replaceClsListM.replace('_replaceOldM', '_replaceNewM');
+				}
+
 				////////////////////////////////////////////
 			}
 		})();
 	</script>
 </head>
-<body>
-	<div class="add">ADD</div>
-	<div class="remove _remove">REMOVE</div>
-	<div class="toggle _toggle">TOGGLE</div>
-	<div class="contain _contain">CONTAIN</div>
-	<div class="replace _replaceOld">REPLACE</div>
+<body style="overflow: hidden;">
+	<section style="float: left; border-right: 3px solid red;">
+		<div class="add">ADD</div>
+		<div class="remove _remove">REMOVE</div>
+		<div class="toggle _toggle">TOGGLE</div>
+		<div class="contain _contain">CONTAIN</div>
+		<div class="replace _replaceOld">REPLACE</div>
+	</section>
+
+	<section style="float: left; margin: 15px 0 0;">
+		<article>
+			<div class="addm">ADD Multi</div>
+			<div class="addm">ADD Multi</div>
+			<div class="addm">ADD Multi</div>
+			<div class="addm">ADD Multi</div>
+			<div class="addm">ADD Multi</div>
+			<div class="addm">ADD Multi</div>
+		</article>
+		<article>
+			<div class="removem _removeM">REMOVE Multi</div>
+			<div class="removem _removeM">REMOVE Multi</div>
+			<div class="removem _removeM">REMOVE Multi</div>
+			<div class="removem _removeM">REMOVE Multi</div>
+			<div class="removem _removeM">REMOVE Multi</div>
+			<div class="removem _removeM">REMOVE Multi</div>
+		</article>
+		<article>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+			<div class="togglem _toggleM">TOGGLE Multi</div>
+		</article>
+		<article>
+			<div class="containm _containM">CONTAIN Multi</div>
+			<div class="containm ">CONTAIN Multi</div>
+			<div class="containm _containM">CONTAIN Multi</div>
+			<div class="containm ">CONTAIN Multi</div>
+			<div class="containm _containM">CONTAIN Multi</div>
+			<div class="containm ">CONTAIN Multi</div>
+		</article>
+		<article>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+			<div class="replacem _replaceOldM">REPLACE Multi</div>
+		</article>
+	</section>
 </body>
 </html>
