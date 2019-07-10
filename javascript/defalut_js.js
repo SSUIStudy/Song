@@ -1,37 +1,5 @@
-(function(ssq){
-	var	struc={}, config={}, listener={};
-	ssq(document).ready(function(){ struc.init() });
-	function trace(a){ var b=""; for(var i=0;i<arguments.length;i++){if(i>0)b+=", ";b+=arguments[i];} try{console.log(b);}catch(e){}}
-	struc = {
-		init : function() {
-			struc.regist(); 
-			struc.pageMethod();
-			listener.start();
-		},
-		regist : function() {
-
-		},
-		pageMethod : function () {
-			//la.init();
-			gnb();
-		}
-	};
-	listener = {
-		start : function(){
-			ssq(window).bind("resize", listener.resizePage); listener.resizePage();
-			/*ssq("a[href=#]").on("click",function(e){
-				e.preventDefault();
-			})*/
-			ssq(window).on('scroll', function() {
-
-			});
-		},
-		resizePage : function(e) {
-
-		}
-	};	
-
-	function gnb() {
+(function() {
+	window.onload=function(){
 		var bdy = document.querySelector('body'),
 			btnMenu = document.querySelector('.btn__menu'),
 			btnCloseMenu = document.querySelector('.btn__close'),
@@ -39,21 +7,54 @@
 			depth2 = document.querySelectorAll('.gnb .inner > ul > li > .depth2-box > ul > li > a'),
 			btnBack = document.querySelectorAll('a.tit__depth'),
 			clsName, clsName2, clsName3,
-			regExp = function(clsname) {
-				return new RegExp('(^| )'+ clsName +'( |$)');
+			regExp = function(cls) {
+				return new RegExp('(^| )'+ cls +'( |$)');
+			},
+			depthOneClick = function(idx){				
+				clsName2 = 'depth2--open';
+
+				depth1[idx].addEventListener('click', function(){
+					var depthOneArr;
+					
+					depthOneArr = depth1[idx].parentNode.className.split(' ');
+
+					if (depthOneArr.indexOf(clsName2) == -1) {
+						depth1[idx].parentNode.className += ' ' + clsName2;
+					}
+
+					for(var i = 0; i < depth2.length; i++){								
+						depthTwoClick(i);
+					}		
+					
+					depthOneClose(idx);
+				});				
+			},
+			depthTwoClick = function(idx){
+				depth2[idx].addEventListener('click', function(){
+					var depthTwoArr;
+					clsName3 = 'depth3--open';
+					
+					depthTwoArr = depth2[idx].parentNode.className.split(' ');
+
+					if (depthTwoArr.indexOf(clsName3) == -1) {
+						depth2[idx].parentNode.className += ' ' + clsName3;
+					}else{
+						depth2[idx].parentNode.className = depth2[idx].parentNode.className.replace(regExp(clsName3), '');
+					}
+				});
+			},
+			depthOneClose = function(idx){
+				btnBack[idx].addEventListener('click', function(){					
+					clsName2 = 'depth2--open';
+					btnBack[idx].parentNode.parentNode.className = btnBack[idx].parentNode.parentNode.className.replace(regExp(clsName2), '');
+				});				
 			};
-
-
-			console.log('selector : ' + bdy.className);
-			for(var i = 0; i < depth1.length; i++){		
-				console.log('selectorAll : ' + document.querySelectorAll('.gnb .inner > ul > li')[i].className);
-			}
+	
+			
 
 		btnMenu.addEventListener('click', function(){
 			var arr;
 			clsName = 'gnb--open';		
-
-			//	bdy.classList.add(clsName); //ie10까지		
 
 			//모든 브라우저
 			arr = bdy.className.split(' ');
@@ -61,67 +62,30 @@
 			if (arr.indexOf(clsName) == -1) {
 				bdy.className += ' ' + clsName;
 			}					
-
-			//console.log(depth2.parentNode);
 		});
 
 		btnCloseMenu.addEventListener('click', function(){
 			clsName = 'gnb--open';			
 			clsName2 = 'depth2--open';			
 			clsName3 = 'depth3--open';			
-
-			//	bdy.classList.remove(clsName); //ie10까지
 			
 			//모든 브라우저
-			bdy.className = bdy.className.replace(regExp(clsName), ''); 					
+			bdy.className = bdy.className.replace(regExp(clsName), ''); 	
+			
+			for(var d = 0; d < depth1.length; d++){
+				depth1[d].parentNode.className = depth1[d].parentNode.className.replace(regExp(clsName2), ''); 	
+				depth2[d].parentNode.className = depth2[d].parentNode.className.replace(regExp(clsName3), ''); 
+			}			
 		});
 
-		for(var i = 0; i < depth1.length; i++){					
-			depth1[i].addEventListener('click', function(){
-				var arr;
-
-				clsName2 = 'depth2--open';			
-				clsName3 = 'depth3--open';					
-
-				arr = this.parentNode.className.split(' ');
-
-				if (arr.indexOf(clsName2) == -1) {
-					this.parentNode.className += ' ' + clsName2;
-				}			
-			});									
+		for(var i = 0; i < depth1.length; i++){
+			depthOneClick(i);	
 		}
 
-		/*btnBack.addEventListener('click', function(){	
-			clsName2 = 'depth2--open';			
-			clsName3 = 'depth3--open';
-
-			console.log('aaa');
-					
-		});*/
-
 		
 		
-		
-
-		
-
-		/*
-
-		depth1.on('click', function(){
-			ssq(this).parent('li').addClass('depth2--open');
-		});
-
-		btnBack.on('click', function(){
-			depth2.parent('li').removeClass('depth3--open');
-			depth1.parent('li').removeClass('depth2--open');
-		});
-
-		depth2.on('click', function(){
-			ssq(this).parent('li').toggleClass('depth3--open');
-		});*/
 	}
-
-
+})();
 
 	//layout action
 	la = {
@@ -209,5 +173,3 @@
 		}
 	}
 
-
-})(jQuery);
