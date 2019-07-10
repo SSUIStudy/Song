@@ -1,13 +1,18 @@
 ### POLYFILL - CLASS(ADD, REMOVE, TOGGLE, CONTAINS, REPLACE)
 
 생성자 함수 : new키워드로 객체를 생성할 수 있는 함수, 생성자 함수의 이름은 대문자로 시작
+
 프로토타입 : 
 프로토타입을 사용하지 않고 객체 내에 메서드를 생성하게 된다면, 객체를 생성할 때 똑같은 메서드를 계속해서 생성하는 비효율성이 발생함, 
+
 자바스크립트의 프로토타입 공간은 생성자 함수로 생성된 객체가 공통으로 가지는 공간,
+
 프로토타입 공간에 객체가 가진 메서드를 옮기면 객체 생성시 마다 메서드를 계속해서 생성하는 비효율을 제거할 수 있음
+
 https://github.com/leeho203/practice/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC
 
 -polyfill
+
 https://developer.mozilla.org/ko/docs/Web/API/Element/classList
 
 ```sh
