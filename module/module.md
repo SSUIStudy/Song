@@ -93,5 +93,5 @@ new User('John');
   -------------------
 
 출처
-https://ko.javascript.info/modules
-https://velog.io/@doondoony/JavaScript-Module-System
+ - https://ko.javascript.info/modules
+ - https://velog.io/@doondoony/JavaScript-Module-System
