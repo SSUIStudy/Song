@@ -9,6 +9,8 @@
 function aaa(){
   alert('Hi~!');
 }
+
+<script type="module" src="abcd.mjs"></script>
 ```
 
   ES6 이전에는 브라우저에서 사용 가능한 표준 모듈 시스템 없었음.
