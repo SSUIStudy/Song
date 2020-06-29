@@ -6,10 +6,6 @@
 쉽게 구분하고 사용할 수 있도록 ```.mjs``` 확장자를 사용하는 것을 추천.
 
 ```javascript
-function aaa(){
-  alert('Hi~!');
-}
-
 <script type="module" src="abcd.mjs"></script>
 ```
 
