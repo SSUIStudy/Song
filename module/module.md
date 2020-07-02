@@ -87,7 +87,7 @@ import User from './user.js'; // {User}가 아닌 User로 클래스를 가져왔
 new User('John');
 ```
 
-
+ie는 사용 못함.
 
   -------------------
 
